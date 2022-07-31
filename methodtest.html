@@ -1,0 +1,73 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Enzo Han">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #article-head {
+            display:inline-block;
+        }
+        #date-display:hover {
+            font-size: 1.25rem;
+        }
+        button:hover {
+            background-color: darkgray;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="/methodtest.html">Method Test</a></li>
+            <li><a href="/webcomponent.html">Web Component</a></li>
+        </ul>
+    </nav>
+    <form action="#">
+        <fieldset>
+            <legend><h2>Article:</h2></legend>
+
+            <div id="article-head">
+            <label for="id-input">ID:</label>
+            <input type="text" id="id-input" name="id-input">
+
+            <br>
+            <br>
+
+            <label for="article-name">Article Name:</label>
+            <input type="text" id="article-name" name="article-name">
+            </div>
+
+            <br>
+            <br>
+
+            <label for="article-body">Body:</label>
+            <br>
+            <textarea id="article-body" name="article-body" rows="5" cols="30"></textarea>
+
+            <br>
+            <br>
+
+            <output id="date-display"></output> 
+        </fieldset>
+    </form>
+
+    <button id="post-button">Post</button>
+    <button id="get-button">Get</button>
+    <button id="put-button">Put</button>
+    <button id="delete-button">Delete</button>
+
+    <fieldset>
+        <legend><h2>Output:</h2></legend>
+        <output id="response"></output>
+    </fieldset>
+
+    <script type="module">
+        import {init} from "/requests.js";
+        import {displayDate} from "/requests.js";
+        window.addEventListener('DOMContentLoaded', init);
+        setInterval(displayDate, 1000);
+    </script>
+</body>
+</html>
